@@ -12,7 +12,7 @@ export class ProductService {
 
   constructor(private httpClient:HttpClient) { }
 
-  viewAllproduct(){
+viewAllproduct(){
     const baseurl='http://localhost:3000/products'
     return this.httpClient.get(baseurl)
   }
@@ -33,4 +33,13 @@ addproduct(productdata:any){
   return this.httpClient.post(baseurl,productdata)
 
 }
+
+editproduct(productid:any,productdata:any){
+  const baseurl='http://localhost:3000/products/'+productid
+  return this.httpClient.put(baseurl,productdata)
+
+}
+
+
+
 }
